@@ -1,23 +1,16 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>This is our Anagram list</h1>
+  <% if @word_anagram %>
+    <% @word_anagram.each do |word_object| %>
+      <li> <%= word_object.name %> </li>
+    <% end %>
+  <% end %>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <form action="/post_route" method="post">
+    Input a word to find its anagrams
+    <br>
+    <input type="text" name="user_input">
+    <input type="submit" value="Test it!">
+  </form>
+  
 </div>

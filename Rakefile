@@ -4,7 +4,7 @@ require 'rspec/core/rake_task'
 
 require ::File.expand_path('../config/environment', __FILE__)
 
-# Include all of ActiveSupport's core class extensions, e.g., String#camelize
+# Include all of ActiveSupport's core class extensions, e.generate., String#camelize
 require 'active_support/core_ext'
 
 namespace :generate do
